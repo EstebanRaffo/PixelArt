@@ -1,0 +1,7 @@
+Contenido:
+
+una sub-carpeta llamada “js”, con el archivo recursos.js. En este archivo están las funciones dadas y algo de código de soporte.
+un archivo pixel-art.js donde programarás todo tu código para cumplir las funcionalidades pedidas.
+un archivo index.html con el HTML necesario para el Pixel Art. Este archivo no será necesario que lo toques a menos que decidas cambiar el HTML, pero esto conlleva el riesgo de que no funcione.
+una carpeta llamada “css” con el archivo de estilo del juego, index.css. En este archivo viene dado un estilo por defecto para la página.
+una carpeta llamada “img” y otra llamada “json” con los recursos necesarios para poder cargar los superhéroes pixelados.
