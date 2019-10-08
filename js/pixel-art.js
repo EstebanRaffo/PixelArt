@@ -63,6 +63,7 @@ function generarGrilla(){
 generarPaleta();
 generarGrilla();
 
+// 1.3  Guía: parte 2
 var colorElegido = document.getElementById('indicador-de-color');
  
 
