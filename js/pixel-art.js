@@ -52,21 +52,27 @@ function generarPaleta(){
 
 function generarGrilla(){
   var grilla = document.getElementById('grilla-pixeles');
+  var filas = 1750 / 15;
+  var columnas = 495 / 15; 
 
-  for(let i = 0; i < nombreColores.length; i++){
-    var unPixel = document.createElement('div');
-    grilla.appendChild(unPixel);
-    $(grilla).css('width', '1750px');
+  for(let i = 0; i < filas; i++){
+    for(let j = 0; j < columnas; j++){
+      var unPixel = document.createElement('div');
+      grilla.appendChild(unPixel);
+      $(grilla).css('width', '1750px');
+    }
   }
 }
 
 generarPaleta();
 generarGrilla();
 
-// 1.3  Guía: parte 2
-var colorElegido = document.getElementById('indicador-de-color');
- 
+$('.color-paleta').click(function(){
+  var $colorElegido = $(this).css('background-color');
+  $('#indicador-de-color').css('background-color', $colorElegido);
+}); 
 
+// 1.3  Guía: parte 2. Paso 2
 
 
 
