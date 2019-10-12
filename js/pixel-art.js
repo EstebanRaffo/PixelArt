@@ -23,14 +23,16 @@ var nombreColores = ['White', 'LightYellow',
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById('color-personalizado');
+var colorElegido;
+var estaPresionado;
 
 colorPersonalizado.addEventListener('change', 
   (function() {
     // Se guarda el color de la rueda en colorActual
     colorActual = colorPersonalizado.value;
     // Completar para que cambie el indicador-de-color al colorActual
-
-
+    colorElegido = colorActual;
+    $('#indicador-de-color').css('background-color', colorElegido); 
   })
 );
 
@@ -42,7 +44,7 @@ function generarPaleta(){
   for(let i = 0; i < nombreColores.length; i++){
     let colorActual = nombreColores[i];
     var unColor = document.createElement('div');
-    // unColor.style.backgroundColor = colorActual;
+    
     $(unColor).css('background-color', colorActual);
     $(unColor).attr('class', 'color-paleta');
     var paleta = document.getElementById('paleta');
@@ -68,13 +70,40 @@ generarPaleta();
 generarGrilla();
 
 $('.color-paleta').click(function(){
-  var $colorElegido = $(this).css('background-color');
-  $('#indicador-de-color').css('background-color', $colorElegido);
+  colorElegido = $(this).css('background-color');
+  $('#indicador-de-color').css('background-color', colorElegido);
 }); 
 
-// 1.3  Guía: parte 2. Paso 2
+$('#grilla-pixeles div').click(function(){
+  $(this).css('background-color', colorElegido);
+});
 
+// onmousedown: Se pulsa un botón del ratón sobre un elemento
+// onmouseup: Un botón del ratón se libera estando sobre un elemento
 
+$('#grilla-pixeles div').mousedown(function(){
+  estaPresionado = true;
+});
+
+$('#grilla-pixeles div').mouseup(function(){
+  estaPresionado = false;
+});
+
+$('#grilla-pixeles div').hover(function(){
+  if(estaPresionado){
+    $(this).css('background-color', colorElegido);
+  }
+});
+
+$('#borrar').click(function(){
+  $('#grilla-pixeles').children().animate({'background-color': 'white'}, 1000);
+});
+
+// 1.4  Guía: parte 3. Paso 2: Cargá a los superhéroes en forma de píxeles
+$('#batman').click(function(){
+  var $img_src = $(this).attr('src');
+  cargarSuperheroe($img_src);
+});
 
 
 
