@@ -101,18 +101,22 @@ $('#borrar').click(function(){
 
 // 1.4  Guía: parte 3. Paso 2: Cargá a los superhéroes en forma de píxeles
 $('#batman').click(function(){
-  var $img_src = $(this).attr('src');
-  cargarSuperheroe($img_src);
+  cargarSuperheroe(batman);
 });
 
+$('#wonder').click(function(){
+  cargarSuperheroe(wonder);
+});
 
+$('#flash').click(function(){
+  cargarSuperheroe(flash);
+});
 
+$('#invisible').click(function(){
+  cargarSuperheroe(invisible);
+});
 
-
-
-
-
-
-
-
-
+// Paso 3: Habilitá la descarga de cada obra de arte
+$('#guardar').click(function(){
+  guardarPixelArt();
+});
