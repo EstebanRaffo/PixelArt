@@ -54,14 +54,14 @@ function generarPaleta(){
 
 function generarGrilla(){
   var grilla = document.getElementById('grilla-pixeles');
-  var filas = 1750 / 15;
-  var columnas = 495 / 15; 
+  $(grilla).css('width', '795px');
+  var filas = 495 / 15;
+  var columnas = 795 / 15;
 
   for(let i = 0; i < filas; i++){
     for(let j = 0; j < columnas; j++){
       var unPixel = document.createElement('div');
       grilla.appendChild(unPixel);
-      $(grilla).css('width', '1750px');
     }
   }
 }
@@ -99,7 +99,7 @@ $('#borrar').click(function(){
   $('#grilla-pixeles').children().animate({'background-color': 'white'}, 1000);
 });
 
-// 1.4  Guía: parte 3. Paso 2: Cargá a los superhéroes en forma de píxeles
+// Paso 2: Cargá a los superhéroes en forma de píxeles
 $('#batman').click(function(){
   cargarSuperheroe(batman);
 });
