@@ -100,21 +100,26 @@ $('#borrar').click(function(){
 });
 
 // Paso 2: Cargá a los superhéroes en forma de píxeles
-$('#batman').click(function(){
-  cargarSuperheroe(batman);
-});
 
-$('#wonder').click(function(){
-  cargarSuperheroe(wonder);
-});
+$('.imgs img').on('click', function(){ 
+  var id = $(this).attr('id');  
+  switch(id){  
+      case 'batman': 
+        cargarSuperheroe(batman);  
+        break;  
+      case 'wonder': 
+        cargarSuperheroe(wonder);  
+        break;
+      case 'flash':
+        cargarSuperheroe(flash);
+        break;
+      case 'invisible':
+        cargarSuperheroe(invisible);
+        break;  
+      default:  
+  }  
+});  
 
-$('#flash').click(function(){
-  cargarSuperheroe(flash);
-});
-
-$('#invisible').click(function(){
-  cargarSuperheroe(invisible);
-});
 
 // Paso 3: Habilitá la descarga de cada obra de arte
 $('#guardar').click(function(){
