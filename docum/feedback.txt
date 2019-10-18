@@ -1,0 +1,29 @@
+Algunos detalles a tener en cuenta:
+
+Carga superhéroes:
+Aquí se podría optimizar el código (o simplemente tener otra forma de solución) tomando el "id" del html asociada a la imagen del superhéroe y en base al "id" cargar el superhéroe indicado en javascript, de esta forma se obtiene una solución mas genérica:
+
+HTML:
+<ul class="imgs">  
+       <li> <img id="batman" src="img/batman.png" alt="batman"></li>  
+       <li> <img id="wonder" src="img/wonder.png" alt="wonder woman"></li>  
+       <li> <img id="flash" src="img/flash.png" alt="flash"></li>  
+       <li><img id="invisible" src="img/invisible.png" alt="invisible"></li>  
+</ul>  
+JavaScript:
+$('.imgs img').on('click', function(){ (1)  
+  
+  var id = $(this).attr('id'); (2)  
+  
+  switch (id) {  
+    case 'batman': cargarSuperheroe(batman);  
+      break;  
+      case 'wonder': cargarSuperheroe(wonder);  
+        break;  
+    default:  
+  
+  }  
+  
+})  
+En (1), el selector recupera todas las imágenes y se aplica el listener del evento 'click'
+En (2), se recupera el 'id' de la imagen seleccionada y luego se usa en el switch posterior para determinar que superhéroe cargar
